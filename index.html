@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-3</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- 1. Selector -->
+    <!-- <h1>jquery-3</h1>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias quae labore officia ipsa.
+        Odit, in modi corrupti obcaecati excepturi ducimus, ad accusantium molestias perferendis sed vel soluta facere
+        delectus.</p>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias quae labore officia ipsa.
+        Odit, in modi corrupti obcaecati excepturi ducimus, ad accusantium molestias perferendis sed vel soluta facere
+        delectus.</p> -->
+    <!-- <a href="#">Link</a> -->
+
+    <!--2. Events -->
+    <!-- <div style="margin-left: 200px;">
+        <p class="paragraph">this is para</p>
+
+        <button id="btn">Hide para</button>
+        <br><br>
+        <div id="colored-div" style="background-color: greenyellow; height: 100px; width: 100px;"></div>
+    </div> -->
+
+    <!-- 3. 4. 5.  Effects -->
+
+    <!-- <div style="margin-left: 200px;">
+    <p id="pra">this is p tag</p>
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button>
+
+    <br><br>
+    <div id="colored-div" style="background-color: yellow; height: 100px; width: 100px;"></div>
+
+    </div> -->
+
+    <!--6. Manipulating HTML -->
+    <!-- 
+    <div id="context">
+
+        <p>this is new para <a href="#">Link</a></p>
+        <p>this is new para</p>
+
+    </div>
+
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button> -->
+
+
+    <!-- 7. How to get input values -->
+
+    <!-- <input type="text" id="name" placeholder="Enter your name">
+    <button id="btn">Click</button>  -->
+
+
+    <!--8. set and get attribute -->
+
+    <!-- <div id="context">
+
+        <p>this is new para <a href="http://127.0.0.1:5500/index.html" class="link" id="link">Link</a></p>
+        <p>this is new para</p>
+
+    </div>
+
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button> -->
+
+    <!--9. add html element -->
+
+    <!-- before -->
+    <ul id="list">
+        <!-- prepend -->
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <!-- append -->
+    </ul>
+    <!-- after -->
+
+    <!-- 10. 11. 12. -->
+    <!-- 
+    <div id="box" class="box red"></div>
+    <button id="btn">Click</button> -->
+
+
+    <!-- 13. Traversing HTML -->
+
+    <!-- <ul id="list2">
+        <li><span id="span1">Item 1</span></li>
+        <li><span id="span2">Item 2</span></li>
+        <li><span id="span3">Item 3</span></li>
+    </ul>
+
+
+    <ul id="list3">
+        <li>Children 1</li>
+        <li>Children 2</li>
+        <li id="item1">Children 3</li>
+        <li>Children 4</li>
+        <li id="item2">Children 5</li>
+        <li>Children 6</li>
+    </ul> -->
+
+    <!-- NO CONFLICT -->
+    <p id="para">this is a p tag</p>
+    <button id="btn">click me</button>
+
+
+    <script>
+
+        $(document).ready(function () {    //  $(function()){}   both are same this is shortcut
+
+            //1. selectors
+
+            // $('.para').hide();  // class
+            // $('#para').hide();  // id
+            // $('p').hide();        // tagname
+            // $('*').hide();  // all elements hide
+
+            //2 Events
+
+            // $("#btn").click(function () {
+            //     $("p.paragraph").toggle();
+            //     //    $(this).toggle();
+            // });
+
+
+            // $("#colored-div").mouseenter(function(){
+            //     $(this).css("background-color", "red");
+            // });
+
+            // $("#colored-div").mouseleave(function(){
+            //     $(this).css("background-color", "greenyellow");
+            // });
+
+
+            // hover effect  work same as mouseenter and mouseleave
+
+            // $("#colored-div").hover(function () {
+            //     $(this).css("background-color", "red");
+            //     $('.paragraph').hide();
+            // },
+            //     function () {
+            //         $(this).css("background-color", "greenyellow");
+            //         $('.paragraph').show();
+            //     }
+            // );
+
+            // using on event we can add multiple events on on single element
+
+            // $('#colored-div').on({
+            //     click: function(){
+            //         $(this).css("background-color", "red");
+            //     },
+            //     mouseenter: function () {
+            //         $('.paragraph').hide();
+            //     }
+            //     ,
+            //     mouseleave: function () {
+            //         $('.paragraph').show();
+            //     }
+            // });
+
+
+            // Effect
+
+            // $('#btn1').click(function(){
+            //     $('#colored-div').hide(1000);
+            // });
+
+            // $('#btn2').click(function(){
+            //     $('#colored-div').show(2000);
+            // });
+
+            // $('#btn1').click(function(){
+            //     $('#colored-div').fadeOut(1000);
+            // });
+
+            // $('#btn2').click(function(){
+            //     $('#colored-div').fadeIn(2000);
+            // });
+
+            // $('#btn1').click(function(){
+            //     $('#colored-div').fadeToggle(1000);
+            // });
+
+            // $('#btn1').click(function(){
+            //     $('#colored-div').slideUp(1000);
+            // });
+
+            // $('#btn2').click(function(){
+            //     $('#colored-div').slideDown(1000);
+            // });
+
+            // $('#btn1').click(function(){
+            //     // $("#colored-div").animate({height: "300px"},1000);
+            //     $("#colored-div").animate({height: "300px",width:"300px"},1000);
+            // });
+
+            // $('#btn2').click(function(){
+            //     // $("#colored-div").animate({height: "100px"},1000);
+            //     $("#colored-div").animate({height: "100px",width:"100px"},1000);
+            // });
+
+
+            //  stop effects
+
+            // $('#btn1').click(function(){
+            //     $("#colored-div").animate({height: "300px",width:"300px"},1000);
+            // });
+
+            // $('#btn2').click(function(){
+            //     $("#colored-div").stop();  // stop effects
+            // });
+
+
+            //4.  Call back function
+
+            // $('#btn1').click(function(){
+            //     $("#colored-div").hide(3000);
+            //    alert("div is now hidden");      // alert is shown first then it hides
+            // });
+
+
+            // $('#btn1').click(function(){
+            //     $("#colored-div").hide(3000 , function(){
+            //         alert("div is now hidden");   // alert is shown after it hides
+            //     });
+
+            // });
+
+            // 5. chaining          // multiple effects on same element         // time and callback is optional
+
+            // $('#btn1').click(function(){
+            //     $("#colored-div").css("background-color","red").slideUp(2000).slideDown(1000);  
+            // });
+
+
+            // 6. Manipulating HTML
+
+            // $('#btn1').click(function () {
+            //     var txt = $('#context').text();      // it fetch all text of all tags inside this element 
+            //     alert(txt);
+            //     console.log(txt);
+            // });
+
+            // output
+            // this is new para Link
+            // this is new para
+
+            // $('#btn1').click(function () {
+            //     var txt = $('#context').html();      // it fetch all text with tags inside this element 
+            //     alert(txt);
+            //     console.log(txt);
+            // });
+
+            // output
+            // <p>this is new para <a href="#">Link</a></p>
+            // <p>this is new para</p>
+
+
+            // $('#btn1').click(function () {
+            //    $('#context').html("<h1>Change Html</h1>");      // it change html inside this element 
+            // });
+
+            // $('#btn1').click(function () {
+            //    $('#context').text("Change Html");      // it change text inside this element 
+            // });
+
+
+            //7. how to get input values 
+
+            // $('#btn').click(function(){
+            //     var name = $('#name').val();      // it fetch value of input field
+            //     console.log(name);
+            // });
+
+            // $('#btn').click(function(){
+            //     var name = $('#name').val("ali");      // it fetch value of input field
+            //     console.log(name);
+            // });
+
+            // val() is use for both get and set value;
+
+
+            //8. how to get and set attribute
+
+            // $('#btn1').click(function(){
+            //     var value = $('#link').attr("href");
+            //     console.log(value);
+            // });
+
+            // $('#btn1').click(function(){
+            //     var value = $('#link').attr("class");
+            //     console.log(value);
+            // });
+
+            // set attribute
+
+            // $('#btn1').click(function(){
+            //     var value = $('#link').attr("class","connect");
+            //     console.log(value);
+            // });
+
+            // // set multiple attributes
+
+            // $('#btn1').click(function(){
+            //     var value = $('#link').attr({
+            //         "class":"connect",
+            //         "href":"https://www.google.com"
+            //     });
+            //     console.log(value);
+            // });
+
+            //9. add and remove html 
+
+            // $("#list").before("<p>before</p>");
+            // $("#list").after("<p>After</p>");
+
+            // $("#list").append("<li>append</li>");
+            // $("#list").prepend("<li>prepend</li>");
+
+            // $("#list").empty();
+
+            // $("#list").remove();
+
+
+            // 10. set class
+
+            // $("#btn").click(function(){
+            //     $("#box").addClass("circle black");
+            // });
+
+            // $("#btn").click(function(){
+            //     $("#box").removeClass("red black");
+            // });
+
+            // $("#btn").click(function(){
+            //     $("#box").toggleClass("red ");
+            // });
+
+
+            // get and set css
+
+            // $("#btn").click(function(){
+            //   var background_color = $("#box").css("background-color");
+            //   console.log(background_color);
+            // });
+
+            // $("#btn").click(function(){
+            //   var background_color = $("#box").css("background-color","yellow");
+            //   console.log(background_color);
+            // });
+
+            // $("#btn").click(function(){
+            //   var background_color = $("#box").css({
+            //     "background-color":"yellow",
+            //     "border":"5px solid black",
+            //   });
+            //   console.log(background_color);
+            // });
+
+
+            //  12. get all types of width and height
+
+            // $("#btn").click(function () {
+            //     var width = $("#box").width();
+            //     var height = $("#box").height();
+            //     var inner_width = $("#box").innerWidth();
+            //     var outer_width = $("#box").outerWidth();
+            //     var inner_height = $("#box").innerHeight();
+            //     var outer_height = $("#box").outerHeight();
+
+            //     console.log("Width: ", width);
+            //     console.log("Height: ", height);
+            //     console.log("Inner Width: ", inner_width);
+            //     console.log("Outer Width: ", outer_width);
+            //     console.log("Inner Height: ", inner_height);
+            //     console.log("Outer Height: ", outer_height);
+            // });
+
+            // 13. Traversing HTML
+
+            // var elm = $("#span1").parent();
+            // elm.css("border","1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: li, length: 1, prevObject: ce.fn.init}
+
+            // var elm = $("#span1").parents();
+            // console.log(elm); // Output: ce.fn.init {0: li, 1: ul, 2: body, 3: html, length: 4, prevObject: ce.fn.init}
+
+
+            // var elm = $("#span1").parentsUntil("body");
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: li, 1: ul, length: 2, prevObject: ce.fn.init}
+
+
+            //  var elm = $("#list").children();
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: li, 1: li, 2: li, length: 3, prevObject: ce.fn.init}
+
+            // var elm = $("#list2").find("#span2");
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: span#span2, length: 1, prevObject: ce.fn.init}
+
+
+            // var elm = $("#list3").siblings();
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: ul#list, 1: div#box.box.red, 2: button#btn, 3: ul#list2, 4: script, 5: script, length: 6, prevObject: ce.fn.init}
+
+
+            // var elm = $("#item2").next();
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: ul#list, 1: div#box.box.red, 2: button#btn, 3: ul#list2, 4: script, 5: script, length: 6, prevObject: ce.fn.init}
+
+
+            // var elm = $("#item2").next().next;
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: ul#list, 1: div#box.box.red, 2: button#btn, 3: ul#list2, 4: script, 5: script, length: 6, prevObject: ce.fn.init}
+
+            // var elm = $("#item1").nextAll();
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: li, 1: li#item2, 2: li, length: 3, prevObject: ce.fn.init}
+
+            // var elm = $("#item1").nextUntil("#item2");
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: li, length: 1, prevObject: ce.fn.init}
+
+
+            // var elm = $("#item2").prevUntil("#item1");
+            // elm.css("border", "1px solid red");
+            // console.log(elm); // Output: ce.fn.init {0: li, length: 1, prevObject: ce.fn.init}
+
+
+
+            // NO CONFLICT
+            // $.noConflict();         // this method allow other framework or library to use $ symbol without conflict with jQuery
+            // jQuery("#btn").click(function(){
+            //     jQuery("#para").text("Text Changed");
+            // });
+
+            // var jq = $.noConflict();       // shot the name
+            // jq("#btn").click(function () {
+            //     jq("#para").text("Text Changed");
+            // });
+
+
+            // Jquery Plugins
+
+
+
+
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
