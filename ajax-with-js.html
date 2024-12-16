@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">Get Data</button>
+    <h1 id="content"></h1>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', runAjax);
+        content = document.getElementById('content');
+
+        // function runAjax() {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'myfile.txt', true);
+
+        //     xhr.onreadystatechange = function () {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             console.log(this.responseText);
+        //         }
+        //     }
+        //     xhr.send();
+        // }
+
+        // function runAjax() {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'myfile.txt', true);
+
+        //     xhr.onreadystatechange = function () {
+        //         if (this.readyState == 4) {
+        //             if (this.status == 200) {
+
+        //                 console.log(this.responseText);
+        //                 content.innerText = this.responseText;
+        //             } else if (this.status == 404) {
+        //                 console.log();
+        //                 content.innerText = 'Page not found';
+        //             }
+        //         }
+        //     }
+        //     xhr.send();
+        // }
+
+        // function runAjax() {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'myfile.txt', true);
+        //     xhr.onreadystatechange = function () {
+        //         if (this.readyState == 3) {
+        //             console.log('loading...');
+        //         }
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             console.log(this.responseText);
+        //             content.innerText = this.responseText;
+        //         }
+        //     }
+        //     xhr.send();
+        // }
+
+
+
+        // function runAjax() {
+        //     let xhr = new XMLHttpRequest();
+
+        //     console.log(xhr.readyState);
+
+        //     xhr.open('GET', 'myfile.txt', true);
+
+        //     console.log(xhr.readyState);
+
+        //     xhr.onreadystatechange = function () {
+
+        //         console.log(xhr.readyState);
+
+        //         // if (this.readyState == 4 && this.status == 200) {
+        //         //             console.log(this.responseText);
+        //         //         }
+        //     }
+        //     xhr.send();
+        // }
+
+        function runAjax() {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'mydata.json', true);
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let data = JSON.parse(this.responseText);
+
+                    let el = `<ul>`;
+                    data.forEach(element => {
+                        el += `<li>${element.user}</li> <li>${element.age}</li> <li>${element.city}</li>`;
+                    });
+                    el += `</ul>`;
+
+                    content.innerHTML = el;
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

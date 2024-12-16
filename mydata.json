@@ -1,0 +1,26 @@
+[
+    {
+        "user":"ali",
+        "age":25,
+        "city":"lahore"
+        
+    },
+    {
+        "user":"raza",
+        "age":25,
+        "city":"karachi"
+        
+    }
+    ,{
+        "user":"haider",
+        "age":25,
+        "city":"islamabad"
+        
+    }
+    ,{
+        "user":"abbas",
+        "age":25,
+        "city":"dadu"
+        
+    }
+]

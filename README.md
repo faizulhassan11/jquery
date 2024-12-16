@@ -38,6 +38,64 @@ jquery plugin websites
 
 
 
+JQuery Ajax
+================
+1. ajax is the art of exchange data with a server, and updating parts of a web - without reloading the whole page.
+
+Ajax = Asynchronous JavaScript and XML.
+Ajax is not a programming language.
+Ajax is a technique used by web developers in order to make websites behave like desktop applications.
+In shot; Ajax is about loading data in the background and display it on the webpage, without reloading the whole page.
+
+Web application using Ajax enables partial page updates, i-e only the related section of the page is updated, without reloading the entire page.
+Examples of applications using Ajax: Gmail, Google Maps, Youtube, Facebook, etc.
+
+
+There are 2 types of requests / commonunication ways in client server architecture
+
+1. Synchronous
+2. Asynchronous
+
+
+1. Synchronous
+We have a client- server application, and in that application we have a button on a form- and let say button event handler takes 10 seconds.
+
+so in a Synchronous request when we click the button, request is send to the server and server takes 10 seconds to process that request so while server is processing the request the client is blocked and client waits for the server to complete the process and send request back to the client, at that time the user interface of the client is blocked and we cannot do anything with our interface of website.
+
+2. Asynchronous
+
+
+
+Topics Covered
+What is Ajax
+Working of Ajax
+Use & Importance of Ajax
+What is XMLHttpRequest
+XMLHttpRequest Object Methods
+XMLHttpRequest Object Properties
+Ajax with JavaScript
+AJAX with JSON
+AJAX with PHP & MySQL (CRUD & Form Handling)
+AJAX with API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  Nonce 
  javascript, jquery - ajax
  Events
